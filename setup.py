@@ -18,7 +18,7 @@ extras = {
     'test': [
         'pytest',
         'pytest-cov',
-        'pytest-flake8'
+        'pytest-flake8',
         'mypy',
     ],
 }
