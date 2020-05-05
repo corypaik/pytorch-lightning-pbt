@@ -72,8 +72,12 @@ class Agent(ptl.LightningModule):
         """
         # With Population Based Training.
         # first sample initial hypereparameters.
-        lr = np.random.choice(np.logspace(-5, 0, base=10))
-        momentum = np.random.choice(np.linspace(0.1, .9999))
+        if self.hparams.use_pbt:
+            lr = np.random.choice(np.logspace(-5, 0, base=10))
+            momentum = np.random.choice(np.linspace(0.1, .9999))
+        else:
+            lr = self.hparams.learning_rate
+            momentum = 0.9
         # return is exactly the same.
         return [torch.optim.SGD(self.parameters(), lr=lr, momentum=momentum)]
 
