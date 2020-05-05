@@ -33,8 +33,7 @@ setup(
         'pandas',
         'parse',
         'torch==1.5.0',
-        'torchvision==0.6.0'
-        'torchvision',
+        'torchvision==0.6.0',
         'pytorch_lightning==0.7.5'
     ],
     extras_require=extras,

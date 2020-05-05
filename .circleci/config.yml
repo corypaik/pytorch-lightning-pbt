@@ -19,7 +19,7 @@ references:
       name: Testing
       command: |
         python --version ; pip --version ; pip list
-        py.test -v -m agents --cov=lab --cov-report=xml lab
+        py.test -v -m core --cov=lab --cov-report=xml lab
       no_output_timeout: 30m
 
 jobs:
