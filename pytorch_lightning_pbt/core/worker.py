@@ -14,7 +14,7 @@ from pytorch_lightning_pbt.callbacks import EarlyStopping
 from pytorch_lightning_pbt.callbacks import TaskLoading
 from pytorch_lightning_pbt.callbacks import TaskSaving
 from pytorch_lightning_pbt import loggers
-from typing import Dict
+from typing import Dict, Optional
 mp = _mp.get_context('spawn')
 
 import pytorch_lightning_pbt as pbt
@@ -35,7 +35,7 @@ class Worker(mp.Process):
                  pbt_period: int = 4,
                  pbt_monitor: str = 'val_loss',
                  logger_info = None,
-                 **dataloaders):
+                 dataloaders: Optional[Dict]= None):
         """
 
         Args:
@@ -104,7 +104,8 @@ class Worker(mp.Process):
         self.global_epoch = global_epoch
         self.population_tasks = population_tasks
         self.max_epoch = max_epoch
-        self.dataloaders = dataloaders
+        self.dataloaders = dataloaders or {}
+        print(dataloaders)
 
     def run(self):
         """ run

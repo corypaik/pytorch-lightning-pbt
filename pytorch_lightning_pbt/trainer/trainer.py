@@ -127,10 +127,12 @@ class Trainer(object):
             process_position=i,
             global_epoch=global_epoch,
             max_epoch=10,
-            train_dataloader=copy.deepcopy(train_dataloader),
-            val_dataloaders=copy.deepcopy(val_dataloaders),
-            full_parallel=self.num_workers==self.population_size,
+            full_parallel=self.num_workers == self.population_size,
             logger_info=logger_info,
+            dataloaders=dict(
+            train_dataloader=copy.deepcopy(train_dataloader),
+            val_dataloaders=copy.deepcopy(val_dataloaders),),
+
         ) for i in range(self.num_workers)]
 
         [w.start() for w in workers]

@@ -12,14 +12,14 @@ references:
         sudo apt-get update && sudo apt-get install -y cmake
         pip install "$TORCH_VERSION"
         sudo pip install pytest pytest-cov pytest-flake8 -q
-        pip install ./pytorch_lightning_pbt_examples -q
+        pip install -e ./pytorch_lightning_pbt_examples -q
         pip install -e .[all] -q
   tests: &tests
     run:
       name: Testing
       command: |
         python --version ; pip --version ; pip list
-        py.test -v -m core --cov=lab --cov-report=xml
+        py.test -v -m "not slow" --cov=lab --cov-report=xml
       no_output_timeout: 30m
 
 jobs:

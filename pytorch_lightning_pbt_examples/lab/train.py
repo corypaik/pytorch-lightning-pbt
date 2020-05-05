@@ -67,7 +67,7 @@ def main(alg_module, hparams, device):
 
     # get dataloaders and run
     trainer.fit(model=model, **get_dl(hparams=hparams, ds_types='train_val'))
-    trainer.test(model, **get_dl(hparams=hparams, ds_types='test'))
+    # trainer.test(model, **get_dl(hparams=hparams, ds_types='test'))
 
 
 if __name__ == '__main__':

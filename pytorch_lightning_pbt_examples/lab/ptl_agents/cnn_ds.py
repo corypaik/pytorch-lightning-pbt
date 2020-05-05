@@ -194,8 +194,7 @@ class Agent(ptl.LightningModule):
 
         """
         return dict(
-            hparams=('batch_size',),
-            optimizer_states=[('lr', 'momentum')])
+            optimizer_states=[('lr', )])
 
     @staticmethod
     def add_module_args(parser):

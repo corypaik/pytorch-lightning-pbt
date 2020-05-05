@@ -13,7 +13,7 @@ from lab.core.tests import utils as tutils
 from lab import _logger as log
 from lab import train
 from lab.core import setup_run
-
+from lab.networks.resnet import ResNet
 
 
 common_kwargs = dict(
@@ -24,10 +24,10 @@ common_kwargs = dict(
     num_workers=4,
     population_size=4
 )
-from lab.networks.resnet import ResNet
 
 
 
+@pytest.mark.slow
 @pytest.mark.parametrize(["resnet_size", "use_pbt"], [
     *[(size, 1) for size in ResNet.size_map.keys()],
     *[(size, 0) for size in ResNet.size_map.keys()],
@@ -47,6 +47,7 @@ def test_train_resnet_ds(resnet_size, use_pbt):
     kwargs['alg'] = 'resnet_ds'
     tutils.run_train(kwargs=kwargs)
 
+@pytest.mark.slow
 @pytest.mark.parametrize(["resnet_size", "use_pbt"], [
     *[(size, 1) for size in ResNet.size_map.keys()],
     *[(size, 0) for size in ResNet.size_map.keys()],

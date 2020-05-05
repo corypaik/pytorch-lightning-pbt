@@ -21,13 +21,13 @@ common_kwargs = dict(
     nepochs=1,
     pytest=1,
     progressbar=0,
-    num_workers=4,
-    population_size=4,
+    num_workers=1,
+    population_size=1,
 )
 
 @pytest.mark.agents
-@pytest.mark.parametrize(["alg", "kwargs"], [(alg, common_kwargs) for alg in tutils.alg_keys()])
-def test_pl_train_defaults(alg, kwargs):
+@pytest.mark.parametrize("alg", tutils.alg_keys())
+def test_pl_train_defaults(alg):
     """ Tests
 
     Args:
@@ -36,12 +36,13 @@ def test_pl_train_defaults(alg, kwargs):
     Returns:
 
     """
+    kwargs = common_kwargs.copy()
     kwargs['alg'] = alg
     tutils.run_train(kwargs=kwargs)
 
 
-@pytest.mark.parametrize(["alg", "kwargs"], [(alg, common_kwargs) for alg in tutils.alg_keys()])
-def test_pbt_train_defaults(alg, kwargs):
+@pytest.mark.parametrize("alg", tutils.alg_keys())
+def test_pbt_train_defaults(alg):
     """ Tests
 
     Args:
@@ -50,6 +51,7 @@ def test_pbt_train_defaults(alg, kwargs):
     Returns:
 
     """
+    kwargs = common_kwargs.copy()
     kwargs['alg'] = alg
     kwargs['use_pbt'] = 1
     tutils.run_train(kwargs=kwargs)

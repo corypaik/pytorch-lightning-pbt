@@ -15,5 +15,14 @@ This repository is an extension meant to simplify Population Based Training usin
 Currently we are implementing this as a standalone project, but most all of the code is based directly on PyTorch Lightning,
 and we hope to integrate this into that package as we develop better testing and integration practices here. 
 
+# Setup
+```bash
+# core package
+pip install -e .
+# examples
+pip install -e .pytorch_lightning_pbt_examples/
+```
+
+
 # Credits
 [PyTorch Lightning](https://github.com/PytorchLightning/pytorch-lightning)
