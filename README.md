@@ -1,6 +1,6 @@
 <div align="center">
 
-# Pytorch Lightning Population Base Training  
+# Pytorch Lightning Population Based Training  
 [![CircleCI](https://circleci.com/gh/corypaik/pytorch-lightning-pbt.svg?style=shield&circle-token=9400bcc91d4ae20ea1cf7526c1d84b6cdc759210)](https://circleci.com/gh/corypaik/pytorch-lightning-pbt) 
 [![codecov](https://codecov.io/gh/corypaik/pytorch-lightning-pbt/branch/master/graph/badge.svg?token=2yDGmpQZ7h)](https://codecov.io/gh/corypaik/pytorch-lightning-pbt)
 [![CodeFactor](https://www.codefactor.io/repository/github/corypaik/pytorch-lightning-pbt/badge)](https://www.codefactor.io/repository/github/corypaik/pytorch-lightning-pbt)
