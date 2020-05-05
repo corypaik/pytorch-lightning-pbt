@@ -1,0 +1,41 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+  codecov: codecov/codecov@1.0.5
+
+references:
+  install_deps: &install_deps
+    run:
+      name: Install Dependences
+      command: |
+        sudo apt-get update && sudo apt-get install -y cmake
+        pip install "$TORCH_VERSION"
+        sudo pip install pytest pytest-cov pytest-flake8 -q
+        pip install ./pytorch_lightning_pbt_examples -q
+        pip install -e .[all] -q
+  tests: &tests
+    run:
+      name: Testing
+      command: |
+        python --version ; pip --version ; pip list
+        py.test -v -m agents --cov=lab --cov-report=xml lab
+      no_output_timeout: 30m
+
+jobs:
+  build-and-test:
+    docker:
+      - image: circleci/python:3.6
+    environment:
+      - TORCH_VERSION: "torch"
+    steps:
+      - checkout
+      - *install_deps
+      - *tests
+      - codecov/upload:
+        file: coverage.xml
+
+workflows:
+  main:
+    jobs:
+      - build-and-test

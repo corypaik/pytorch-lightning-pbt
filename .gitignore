@@ -1,0 +1,58 @@
+# ---------------------
+# Ignore PyCharm Files
+.idea
+/venv
+
+# Ignore by type
+/.pytest_cache/
+*.egg-info/
+__pycache__/
+.ipynb_checkpoints/
+/*.log
+*.cache
+*.egg-info
+*.texpadtmp
+
+# Writup pdf (compiling)
+/docs/latex/main.pdf
+
+# Codecov files
+/.coverage
+coverage.xml
+
+# Ignore temp experiment data with dirs `version_*/` (final versions will sync)
+/data/**/version_*/
+# Ignore final files *except* CSV (meta_tags, results, logs)
+/data/**/final_*/
+/data/**/final_*/**/!*.csv
+/data/pytest
+
+# ignore example data
+/pytorch_lightning_pbt_examples/data
+
+/docs/notes
+/env/gym-maze
+/env/gym-toy-montezuma
+/env/obstacle-tower-env
+
+/pytorch_lightning_pbt_examples/lab/unreal
+
+# Ignore NB
+/notebooks/*
+
+# Ignore credentials
+/data/auth/
+
+# Ignore Specific Files
+/scratch.py
+baselines/
+agents-master/
+env/ObstacleTower/
+UnitySDK.logkuyfylhjfl
+
+/ppo-master/
+
+/resources
+/external
+/archive
+/docs
