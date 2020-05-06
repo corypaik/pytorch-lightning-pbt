@@ -13,36 +13,6 @@ from pytorch_lightning.callbacks.base import Callback
 
 
 class EarlyStopping(Callback):
-    r"""
-
-
-
-    Args:
-        monitor: quantity to be monitored. Default: ``'val_loss'``.
-        min_delta: minimum change in the monitored quantity
-            to qualify as an improvement, i.e. an absolute
-            change of less than `min_delta`, will count as no
-            improvement. Default: ``0``.
-        patience: number of epochs with no improvement
-            after which training will be stopped. Default: ``0``.
-        verbose: verbosity mode. Default: ``False``.
-        mode: one of {auto, min, max}. In `min` mode,
-            training will stop when the quantity
-            monitored has stopped decreasing; in `max`
-            mode it will stop when the quantity
-            monitored has stopped increasing; in `auto`
-            mode, the direction is automatically inferred
-            from the name of the monitored quantity. Default: ``'auto'``.
-        strict: whether to crash the training if `monitor` is
-            not found in the metrics. Default: ``True``.
-
-    Example::
-
-        >>> from pytorch_lightning import Trainer
-        >>> from pytorch_lightning.callbacks import EarlyStopping
-        >>> early_stopping = EarlyStopping('val_loss')
-        >>> trainer = Trainer(early_stop_callback=early_stopping)
-    """
 
     def __init__(self, global_epoch: mp.Value, max_global_epoch: int, verbose: bool = False):
         """

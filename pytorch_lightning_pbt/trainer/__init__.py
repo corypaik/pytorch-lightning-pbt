@@ -6,7 +6,13 @@
 #           Rocket Romero
 #  Updated: May. 2020
 # ---------------------
-"""  """
+"""
+
+Population Based Trainer
+=========
+
+"""
+
 
 from pytorch_lightning_pbt.trainer.trainer import Trainer
 

@@ -6,7 +6,13 @@
 #           Rocket Romero
 #  Updated: May. 2020
 # ---------------------
-"""  """
+"""
+
+Population Based Trainer
+=========
+
+
+"""
 
 
 import copy
