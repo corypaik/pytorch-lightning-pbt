@@ -32,7 +32,7 @@ setup(
         'numpy',
         'pandas',
         'parse',
-        'torch==1.5.0',
+        'torch==2.2.0',
         'torchvision==0.6.0',
         'pytorch_lightning==0.7.5',
         'psutil',
